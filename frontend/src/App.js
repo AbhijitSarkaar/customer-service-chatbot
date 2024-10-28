@@ -5,8 +5,8 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Footer />
+      {/* <Header />
+      <Footer /> */}
     </div>
   );
 }
