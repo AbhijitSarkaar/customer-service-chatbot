@@ -1,0 +1,15 @@
+mobile screen components 
+
+    - chat interface 
+        - user input 
+        - AI output 
+    - footer 
+        - prompt input 
+        - submit button  
+
+
+
+done 
+
+    - header    
+        - text with logo 
