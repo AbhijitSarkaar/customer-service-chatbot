@@ -6,14 +6,24 @@ const openai = new OpenAI({
   apiKey: process.env.CHAT_APP_API_KEY,
 });
 
-async function openai_chat_completion(question) {
+const context = (question, vectors) => {
+  return `
+  Please use the following Article to answer question. If answer is not found from the article please write I do not know.
+
+  Article: ${vectors.join(". ")}
+
+  Question: ${question}
+`;
+};
+
+async function openai_chat_completion(question, vectors) {
   const completion = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
+    model: "gpt-4o",
     messages: [
       { role: "system", content: "You are a helpful assistant." },
       {
         role: "user",
-        content: question,
+        content: context(question, vectors),
       },
     ],
   });

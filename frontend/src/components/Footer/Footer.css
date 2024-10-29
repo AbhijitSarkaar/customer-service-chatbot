@@ -13,6 +13,7 @@
 }
 
 .button {
+  cursor: pointer;
   padding: 16px;
   background: #4338ca;
   display: flex;
