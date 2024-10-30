@@ -1,0 +1,33 @@
+@media screen and (min-width: 320px) {
+  .chat-interface {
+    margin-top: auto;
+    padding: 16px;
+  }
+  .user-message {
+    text-align: right;
+    max-width: 80%;
+    width: max-content;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #f9fafb;
+    margin-top: 10px;
+    margin-left: auto;
+  }
+  .assistant-message {
+    display: flex;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    gap: 16px;
+    margin-top: 10px;
+  }
+  .app-logo {
+    height: max-content;
+    padding: 10px;
+    background-color: #eef2ff;
+    border-radius: 50%;
+  }
+}
