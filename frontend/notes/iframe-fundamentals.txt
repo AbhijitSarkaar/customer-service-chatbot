@@ -1,0 +1,14 @@
+notes 
+
+    - iframe is a technique to embed a content into third party websites 
+    - content is refered using src 
+    
+pros 
+    - content within iframe is a separate website 
+    - it is isolated from host website's implementation 
+        - it is not changed from host website's css
+        - iframe content is not affected from host website's js scripts 
+
+
+cons 
+    - it needs a server to host a website that renders the chatbot 

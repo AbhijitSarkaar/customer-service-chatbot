@@ -1,0 +1,13 @@
+
+
+- chatbot container element 
+    - div element with position fixed at bottom 0
+    - it is part of the website 
+    - it only changes it's height and width during visibility changes from widget to chat interface
+    - it contains two child elements for chatbot widget and chatbot interface
+        - chatbot widget is imported as an iframe 
+        - chatbot interface is imported as an iframe 
+        - both widget and interface are switched when clicked on corresponding buttons using display and visibility properties
+        - both iframes are hosted at a different url 
+
+

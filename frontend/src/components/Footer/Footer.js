@@ -1,7 +1,7 @@
 import "./Footer.css";
 import { useState } from "react";
 
-const Footer = ({ onResponse }) => {
+const Footer = ({ onInput }) => {
   const [data, setData] = useState("");
 
   const handleChange = (e) => {
@@ -9,27 +9,16 @@ const Footer = ({ onResponse }) => {
   };
 
   const handleClick = () => {
-    onResponse("");
-    fetch("http://localhost:8888/chat-response", {
-      method: "POST",
-      body: JSON.stringify({
-        content: data,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        onResponse(res.content);
-      });
+    onInput("user", data);
+    setData("");
   };
 
   return (
     <footer className="footer">
       <input
+        value={data}
         className="footer-input"
-        placeholder="Enter text..."
+        placeholder="Write a message..."
         onChange={handleChange}
       />
       <div className="button">
