@@ -14,18 +14,15 @@ function App() {
   const [disabled, setDisabled] = useState(false);
 
   const getResponse = async (content) => {
-    const result = await fetch(
-      "https://customer-service-chatbot-3kuq.onrender.com:8888/chat-response",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          content,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const result = await fetch("http://167.172.150.104:8888/chat-response", {
+      method: "POST",
+      body: JSON.stringify({
+        content,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     return result.json();
   };
 
