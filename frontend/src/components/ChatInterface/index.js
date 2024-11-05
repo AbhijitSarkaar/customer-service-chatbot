@@ -1,7 +1,19 @@
+import { useEffect, useRef } from "react";
 import "./index.css";
 
 const ChatInterface = ({ messages }) => {
-  console.log("ChatInterface", messages);
+  const chatInterfaceRef = useRef(null);
+  useEffect(() => {
+    const elem = document.getElementById("chat-interface");
+    if (elem) {
+      const height = messages.length * 300;
+      elem.scrollTo({
+        top: height,
+        behavior: "smooth",
+      });
+    }
+  }, [messages.length]);
+
   const interfaceBlock = messages.map((message, idx) => {
     if (message.role === "assistant") {
       return (
@@ -21,7 +33,11 @@ const ChatInterface = ({ messages }) => {
     }
   });
 
-  return <div className="chat-interface">{interfaceBlock}</div>;
+  return (
+    <div className="chat-interface" id="chat-interface" ref={chatInterfaceRef}>
+      {interfaceBlock}
+    </div>
+  );
 };
 
 export default ChatInterface;

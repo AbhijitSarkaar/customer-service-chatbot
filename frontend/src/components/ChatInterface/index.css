@@ -2,6 +2,7 @@
   .chat-interface {
     margin-top: auto;
     padding: 16px;
+    overflow: scroll;
   }
   .user-message {
     text-align: right;
