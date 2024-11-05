@@ -1,8 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import "./index.css";
 
 const ChatInterface = ({ messages }) => {
-  const chatInterfaceRef = useRef(null);
   useEffect(() => {
     const elem = document.getElementById("chat-interface");
     if (elem) {
@@ -34,7 +33,7 @@ const ChatInterface = ({ messages }) => {
   });
 
   return (
-    <div className="chat-interface" id="chat-interface" ref={chatInterfaceRef}>
+    <div className="chat-interface" id="chat-interface">
       {interfaceBlock}
     </div>
   );

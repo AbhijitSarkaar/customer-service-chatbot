@@ -1,7 +1,7 @@
 import "./Footer.css";
 import { useState } from "react";
 
-const Footer = ({ onInput }) => {
+const Footer = ({ onInput, disabled }) => {
   const [data, setData] = useState("");
 
   const handleChange = (e) => {
@@ -9,8 +9,10 @@ const Footer = ({ onInput }) => {
   };
 
   const handleClick = () => {
-    onInput("user", data);
-    setData("");
+    if (data) {
+      onInput("user", data);
+      setData("");
+    }
   };
 
   return (
@@ -21,7 +23,7 @@ const Footer = ({ onInput }) => {
         placeholder="Write a message..."
         onChange={handleChange}
       />
-      <div className="button">
+      <div className={disabled ? "button disabled" : "button"}>
         <img src="/send-arrow.png" alt="submit" onClick={handleClick} />
       </div>
     </footer>

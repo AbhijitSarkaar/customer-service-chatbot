@@ -11,6 +11,7 @@ function App() {
       content: "Hi! How may I help you today?",
     },
   ]);
+  const [disabled, setDisabled] = useState(false);
 
   const getResponse = async (content) => {
     const result = await fetch("http://localhost:8888/chat-response", {
@@ -26,6 +27,7 @@ function App() {
   };
 
   const onInput = async (role, content) => {
+    setDisabled(true);
     const updatedMessages = [
       ...messages.map((message) => ({ ...message })),
       {
@@ -35,6 +37,7 @@ function App() {
     ];
     setMessages(updatedMessages);
     const result = await getResponse(content);
+    setDisabled(false);
     setMessages([
       ...updatedMessages.map((message) => ({ ...message })),
       {
@@ -48,7 +51,7 @@ function App() {
     <div className="app">
       <Header />
       <ChatInterface messages={messages} />
-      <Footer onInput={onInput} />
+      <Footer onInput={onInput} disabled={disabled} />
     </div>
   );
 }
