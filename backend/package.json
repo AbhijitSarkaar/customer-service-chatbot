@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "prod": "node server.js"
   },
   "dependencies": {
     "@qdrant/js-client-rest": "^1.12.0",
