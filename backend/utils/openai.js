@@ -2,6 +2,8 @@ const OpenAI = require("openai");
 const dotenv = require("dotenv");
 dotenv.config();
 
+const OPENAI_MODEL = "gpt-4o-mini";
+
 const openai = new OpenAI({
   apiKey: process.env.CHAT_APP_API_KEY,
 });
@@ -18,7 +20,7 @@ const context = (question, vectors) => {
 
 async function openai_chat_completion(question, vectors) {
   const completion = await openai.chat.completions.create({
-    model: "gpt-4o",
+    model: OPENAI_MODEL,
     messages: [
       { role: "system", content: "You are a helpful assistant." },
       {

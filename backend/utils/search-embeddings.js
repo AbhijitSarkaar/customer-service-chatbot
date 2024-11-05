@@ -1,8 +1,16 @@
+require("dotenv").config;
 const { QdrantClient } = require("@qdrant/js-client-rest");
 
+// localhost
+// const client = new QdrantClient({
+//   host: "localhost",
+//   port: 6333,
+// });
+
+// production
 const client = new QdrantClient({
-  host: "localhost",
-  port: 6333,
+  url: process.env.QDRANT_VECTOR_DB_URI,
+  apiKey: process.env.QDRANT_VECTOR_DB_API_KEY,
 });
 
 async function search(vector) {
